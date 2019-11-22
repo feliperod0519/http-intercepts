@@ -1,5 +1,26 @@
 <h3>Response</h3>
 <pre>{{ response | async | json }}</pre>
-<button (click)="request("http://jsonplaceholder.typicode.com/todos/1")">
+<button (click)="request('http://jsonplaceholder.typicode.com/todos/1')">
   Run
 </button>
+<br/>
+<br/>
+<div>
+  <button
+    (click)="runDelay()"
+    [disabled]="loaderService.enabled">
+    Run
+  </button>
+  <div>
+    <h3>Response</h3>
+    <div>:) {{loaderService.counter}}</div>
+  </div>
+</div>
+<br/>
+<br/>
+<div>
+  <button
+    (click)="runMap()">
+    Run
+  </button>
+</div>
