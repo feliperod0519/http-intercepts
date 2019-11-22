@@ -16,8 +16,7 @@ export class SandboxComponent implements OnInit {
   ngOnInit() {
   }
 
-  request() {
-    const url = "http://jsonplaceholder.typicode.com/todos/1";
+  request(url:string) {
     this.response = this.http.get(url);
   }
 }
