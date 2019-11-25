@@ -23,6 +23,9 @@ export class MapinterceptorService implements HttpInterceptor {
                                                                 let newValue = t.doTransformation(m,"name",(x:string)=>{return x.toUpperCase();});
                                                                 m.add("name",newValue)
                                                                 console.log(m.get("name"));
+                                                                this.decodeUser(m);
+                                                                const modEvent = r.clone({body:JSON.parse(this.decodeUser(m))});
+                                                                return modEvent;
                                                               }
                                                               return r;
                                                            })
@@ -40,6 +43,14 @@ export class MapinterceptorService implements HttpInterceptor {
       n++;      
     });
     return m;
+  }
+ 
+  
+  decodeUser(m: Map<string>):string
+  {
+    let s: string = JSON.stringify(m.items);
+    console.log(s);
+    return s;
   }
   
   

@@ -21,7 +21,7 @@ export class Transformation {
 }
 
 export class Map<T>{
-    private items: { [key:string]: T };
+    public items: { [key:string]: T };
     
     constructor(){
         this.items = {};
@@ -38,7 +38,6 @@ export class Map<T>{
     get(key: string): T {
         return this.items[key];
     }
-
 }
 
 export class List<T> {
