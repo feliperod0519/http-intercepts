@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { httpInterceptorProviders } from '../app/interceptor/interceptors';
 import { SandboxComponent } from './sandbox/sandbox/sandbox.component';
 
+//import { ToastrModule } from "ngx-toastr";
 
 @NgModule({
   declarations: [
@@ -17,9 +18,10 @@ import { SandboxComponent } from './sandbox/sandbox/sandbox.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    //ToastrModule.forRoot()
   ],
-  providers: [httpInterceptorProviders],
+  providers: [httpInterceptorProviders ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
